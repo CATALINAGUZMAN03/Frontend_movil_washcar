@@ -1,50 +1,104 @@
-# Welcome to your Expo app 👋
+# Aplicación Móvil para Lavadero de Autos
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Esta aplicación móvil permite gestionar un lavadero de autos, incluyendo la gestión de vehículos, servicios y órdenes de servicio.
 
-## Get started
+## Módulos Implementados
 
-1. Install dependencies
+### Gestión de Vehículos y Servicios
 
+Este módulo permite:
+
+- Gestionar vehículos (agregar, editar, eliminar, ver detalles)
+- Gestionar servicios (agregar, editar, eliminar, ver detalles)
+- Gestionar órdenes de servicio (agregar, editar, eliminar, ver detalles, cambiar estado)
+
+## Requisitos Previos
+
+1. Tener instalado Node.js y npm
+2. Tener instalado Expo CLI (`npm install -g expo-cli`)
+3. Tener un dispositivo Android conectado o un emulador en ejecución
+4. Tener instalada la aplicación Expo Go en el dispositivo
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/CATALINAGUZMAN03/Frontend_movil_washcar.git
+   ```
+
+2. Navega a la carpeta del proyecto:
+   ```bash
+   cd Frontend_movil_washcar
+   ```
+
+3. Instala las dependencias:
    ```bash
    npm install
    ```
 
-2. Start the app
+4. Instala las dependencias adicionales para el módulo de Gestión de Vehículos y Servicios:
+   ```bash
+   npm install @react-native-picker/picker @react-native-community/datetimepicker
+   ```
 
+## Ejecución
+
+1. Inicia la aplicación:
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+2. Escanea el código QR que aparece en la terminal con la aplicación Expo Go en tu dispositivo
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Configuración del Backend
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Para que la aplicación funcione correctamente, necesitas un backend que proporcione los endpoints necesarios. Puedes:
 
-## Get a fresh project
+1. Usar un backend existente: Actualiza la URL base en el archivo `hooks/useApi.ts`
+2. Configurar un backend de prueba: Sigue las instrucciones en el archivo `BACKEND_PRUEBA.md`
 
-When you're ready, run:
+## Estructura de Carpetas
 
-```bash
-npm run reset-project
+```
+/app
+  /orders
+    - AddOrder.tsx
+    - EditOrder.tsx
+    - OrderDetails.tsx
+    - OrderList.tsx
+  /services
+    - AddService.tsx
+    - EditService.tsx
+    - ServiceDetails.tsx
+    - ServiceList.tsx
+  /vehicles
+    - AddVehicle.tsx
+    - EditVehicle.tsx
+    - VehicleDetails.tsx
+    - VehicleList.tsx
+/components
+  - OrderCard.tsx
+  - ServiceCard.tsx
+  - VehicleCard.tsx
+  /ui
+    - IconSymbol.tsx
+/hooks
+  - useApi.ts
+  - useOrders.ts
+  - useServices.ts
+  - useVehicles.ts
+/types
+  - index.ts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Verificación Manual
 
-## Learn more
+Para verificar manualmente que la implementación funciona correctamente, sigue las instrucciones en el archivo `VERIFICACION_MANUAL.md`.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Contribución
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Haz un fork del repositorio
+2. Crea una rama para tu funcionalidad (`git checkout -b feature/nueva-funcionalidad`)
+3. Haz commit de tus cambios (`git commit -am 'Agrega nueva funcionalidad'`)
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Crea un Pull Request
